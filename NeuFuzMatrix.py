@@ -256,7 +256,8 @@ class NFM:
         elif self.algorithm=="Not rules":
             self.rules = np.array(list(itertools.product(*self.FuncsByVariable))) 
 
-        self.weights = np.random.randn(self.Y.ndim,len(self.rules))
+        self.weights = np.random.uniform(30, 100, ((self.Y.ndim,len(self.rules))))
+        # self.weights = np.random.randn(self.Y.ndim,len(self.rules))
         # self.biases = np.zeros((self.Y.ndim, len(self.X[:,0])))
         self.biases = np.random.randn(self.Y.ndim, len(self.X[:,0]))
 
